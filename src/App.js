@@ -59,7 +59,7 @@ const ShadowRealmRunner = ({ initialCode, dataValue, dataName }) => {
 };
 
 function App() {
-  const {data,error} = useSWR('https://api.github.com/repos/matico-platform/matico', (url) => fetch(url).then((r) => r.json()));
+  const {data} = useSWR('https://api.github.com/repos/matico-platform/matico', (url) => fetch(url).then((r) => r.json()));
   return (
     <div className="App">
       <h1>JavaScript ShadowRealms</h1>
@@ -70,6 +70,7 @@ function App() {
           href="
     https://github.com/tc39/proposal-shadowrealm/blob/main/explainer.md"
           target="_blank"
+          rel="noreferrer"
         >
           Javascript ShadowRealm API
         </a>{" "}
@@ -88,7 +89,8 @@ function App() {
       </p>
       <p>
         Unlike the Containers proposal or the{" "}
-        <a href="https://github.com/endojs/endo/" target="_blank">
+        <a href="https://github.com/endojs/endo/" target="_blank" 
+          rel="noreferrer">
           Endo sandbox
         </a>
         , ShadowRealms are not fully isolated. Meaning they do have access to
